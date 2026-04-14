@@ -26,13 +26,11 @@ ubuntu_code=$(lsb_release -c -s)
 # Get the system's architecture name
 arch=$(uname -m)
 
-# Print the workspace directory
+# Get the workspace directory (two levels up from the script's location)
 workspace=$(dirname "$(dirname "$(realpath "$0")")")
-echo "Workspace directory: $workspace"
 
-# Print the current working directory
-echo "Current working directory: $PWD"
-
-# Get the directory of the current script
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-echo "Script directory: $SCRIPT_DIR"
+# Check .deploy directory exists
+if [ ! -d "$workspace/.deploy" ]; then
+  echo "Error: .deploy directory not found in the workspace."
+  exit 1
+fi
