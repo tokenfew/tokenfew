@@ -25,6 +25,3 @@ ubuntu_code=$(lsb_release -c -s)
 
 # Get the system's architecture name
 arch=$(uname -m)
-
-# Echo the architecture and Ubuntu version
-echo "Architecture: $architecture" "Ubuntu Version: $ubuntu_code" "System Architecture: $arch"
