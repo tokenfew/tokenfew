@@ -26,6 +26,10 @@ ubuntu_code=$(lsb_release -c -s)
 # Get the system's architecture name
 arch=$(uname -m)
 
+# Print the workspace directory
+workspace=$(dirname "$(dirname "$(realpath "$0")")")
+echo "Workspace directory: $workspace"
+
 # Print the current working directory
 echo "Current working directory: $PWD"
 
