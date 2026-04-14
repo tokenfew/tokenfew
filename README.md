@@ -21,6 +21,25 @@ Codename:       noble
 Golang Version: 1.24.5+
 ```
 
-## Development Team
+## Development
 
-GEEKROS https://www.geekros.com
+```shell
+go mod download
+```
+
+```shell
+go run ./cmd/main.go
+```
+
+## Build
+
+```shell
+export GO111MODULE=on
+export GOPROXY=https://goproxy.io,direct
+go mod tidy && cd ./cmd
+go build -o ../release/realtime main.go
+```
+
+## Team
+
+GEEKROS https://www.tokenfew.com
