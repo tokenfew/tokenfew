@@ -25,3 +25,10 @@ ubuntu_code=$(lsb_release -c -s)
 
 # Get the system's architecture name
 arch=$(uname -m)
+
+# Print the current working directory
+echo "Current working directory: $PWD"
+
+# Get the directory of the current script
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+echo "Script directory: $SCRIPT_DIR"
