@@ -34,3 +34,17 @@ if [ ! -d "$workspace/.deploy" ]; then
   echo "Error: .deploy directory not found in the workspace."
   exit 1
 fi
+
+# If Go is not installed, install it
+if [ ! -d "/usr/local/go/bin/" ]; then
+    # Install Go if not already installed
+    golang_version="1.24.5"
+    # Download and install Go
+    sudo wget -q https://golang.google.cn/dl/go"${golang_version}".linux-"${architecture}".tar.gz && sudo tar -C /usr/local -xzf go"${golang_version}".linux-"${architecture}".tar.gz
+    # Touch the Go profile script to ensure it exists
+    touch /etc/profile.d/tokenfew_golang.sh
+    # Add Go to the PATH environment variable
+    sudo sh -c 'echo "export PATH=$PATH:/usr/local/go/bin" >> /etc/profile.d/tokenfew_golang.sh'
+     # Source the Go profile script to apply changes
+    source /etc/profile.d/tokenfew_golang.sh
+fi
