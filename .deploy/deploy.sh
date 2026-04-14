@@ -47,4 +47,6 @@ if [ ! -d "/usr/local/go/bin/" ]; then
     sudo sh -c 'echo "export PATH=$PATH:/usr/local/go/bin" >> /etc/profile.d/tokenfew_golang.sh'
      # Source the Go profile script to apply changes
     source /etc/profile.d/tokenfew_golang.sh
+    # Clean up the downloaded Go tarball
+    sudo rm -rf go"${golang_version}".linux-"${architecture}".tar.gz
 fi
