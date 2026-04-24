@@ -43,7 +43,7 @@ sudo apt update
 
 ```bash
 sudo apt update && sudo apt upgrade -y
-sudo apt install -y build-essential linux-headers-$(uname -r) dkms gcc make
+sudo apt install -y build-essential linux-headers-$(uname -r) dkms tree vim curl wget git gcc make cmake unzip net-tools lsb-release openssl openssh-server dpkg-dev gpg libopus-dev libopusfile-dev nginx
 ```
 
 ### 3\. 彻底卸载所有旧 NVIDIA 驱动残留
