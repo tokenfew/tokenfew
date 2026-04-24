@@ -36,7 +36,7 @@ Suitable for Tesla V100-SXM2-16GB/32G server graphics card
 
 #### Step 1：Obtain the driver installation package
 
-Go to `nvidia.cn/drivers` to obtain the `deb` installation package for the corresponding version below
+Go to ![nvidia.cn/drivers](https://www.nvidia.cn/drivers) to obtain the `deb` installation package for the corresponding version below
 
 ```shell
 Driver Version: 570.211.01

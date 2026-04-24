@@ -28,3 +28,6 @@ arch=$(uname -m)
 
 # Current script directory
 current_dir=$(cd "$(dirname "$0")" && pwd)
+
+# Temporary directory for the installation files
+temp_dir=$(mktemp -d)
