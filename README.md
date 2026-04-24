@@ -42,4 +42,4 @@ go build -o ../release/realtime main.go
 
 ## Team
 
-GEEKROS https://www.tokenfew.com
+TokenFew https://www.tokenfew.com
