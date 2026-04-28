@@ -35,6 +35,7 @@ temp_dir=$(mktemp -d)
 # Function to deploy the initial environment
 on_init(){
     echo "Deploying the initial environment..."
+    sudo apt -y update && sudo apt install -y dpkg-dev gpg
 }
 
 # Function to publish the package to the repository
