@@ -35,7 +35,25 @@ temp_dir=$(mktemp -d)
 # Function to deploy the initial environment
 on_init(){
     echo "Deploying the initial environment..."
+
+    # Update the package list and install necessary tools
     sudo apt -y update && sudo apt install -y dpkg-dev gpg
+
+    # If Go is not installed, install it
+    if [ ! -d "/usr/local/go/bin/" ]; then
+        # Install Go if not already installed
+        golang_version="1.24.5"
+        # Download and install Go
+        sudo wget -q https://golang.google.cn/dl/go"${golang_version}".linux-"${architecture}".tar.gz && sudo tar -C /usr/local -xzf go"${golang_version}".linux-"${architecture}".tar.gz
+        # Touch the Go profile script to ensure it exists
+        touch /etc/profile.d/tokenfew_golang.sh
+        # Add Go to the PATH environment variable
+        sudo sh -c 'echo "export PATH=$PATH:/usr/local/go/bin" >> /etc/profile.d/tokenfew_golang.sh'
+        # Source the Go profile script to apply changes
+        source /etc/profile.d/tokenfew_golang.sh
+        # Clean up the downloaded Go tarball
+        sudo rm -rf go"${golang_version}".linux-"${architecture}".tar.gz
+    fi
 }
 
 # Function to publish the package to the repository
