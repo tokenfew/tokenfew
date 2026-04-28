@@ -31,3 +31,29 @@ current_dir=$(cd "$(dirname "$0")" && pwd)
 
 # Temporary directory for the installation files
 temp_dir=$(mktemp -d)
+
+# Function to deploy the initial environment
+on_init(){
+    echo "Deploying the initial environment..."
+}
+
+# Function to publish the package to the repository
+on_publish(){
+    echo "Publishing the package to the repository..."
+}
+
+# Main script logic
+case "$1" in
+    "init")
+        # Deploy the initial environment
+        on_init
+        ;;
+    "publish")
+        # Publish the package to the repository
+        on_publish
+        ;;
+    *)
+        echo "Usage: $0 {init}"
+        exit 1
+        ;;
+esac
