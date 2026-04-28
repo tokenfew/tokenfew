@@ -59,6 +59,15 @@ on_init(){
 # Function to publish the package to the repository
 on_publish(){
     echo "Publishing the package to the repository..."
+
+    # Extract the version number from the version.go file
+    version=$(grep 'Number:.*"' "../package/version/version.go" | awk -F'"' '{print $2}')
+
+    # Generate a timestamp for the package version
+    datetime=$(date +%Y%m%d%H%M%S)
+
+    # Log the version and timestamp for debugging purposes
+    echo "Version: $version Timestamp: $datetime"
 }
 
 # Main script logic
