@@ -1,6 +1,6 @@
-# TOKENFEW CLIENT
+# TOKENFEW
 
-⚡ Client For TokenFew. ⚡
+⚡ Fewer tokens. Smarter complexity. ⚡
 
 ## License
 
